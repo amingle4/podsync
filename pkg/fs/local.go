@@ -70,6 +70,8 @@ func (l *Local) Size(ctx context.Context, ns string, fileName string) (int64, er
 	stat, err := os.Stat(path)
 	if err == nil {
 		return stat.Size(), nil
+	}	else {
+		return 0, nil
 	}
 
 	return 0, err
